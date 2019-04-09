@@ -13,5 +13,9 @@ export class AppComponent {
   version = VERSION;
 
   matSelectSearchVersion = MatSelectSearchVersion;
+  nombre: string;
 
+  obtenerEvento($event: any) {
+    this.nombre = $event.value;
+  }
 }

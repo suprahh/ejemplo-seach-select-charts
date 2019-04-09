@@ -19,6 +19,11 @@ import { MultipleSelectionExampleComponent } from './examples/02-multiple-select
 import { CustomClearIconExampleComponent } from './examples/03-custom-clear-icon-example/custom-clear-icon-example.component';
 import { OptionGroupsExampleComponent } from './examples/04-option-groups-example/option-groups-example.component';
 import { ServerSideSearchExampleComponent } from './examples/05-server-side-search-example/server-side-search-example.component';
+import { RecepcionDatosComponent } from './components/recepcion-datos/recepcion-datos.component';
+import { EjemploGraficoComponent } from './components/ejemplo-grafico/ejemplo-grafico.component';
+import {HighchartsChartModule} from 'highcharts-angular';
+
+
 
 /**
  * NgModule that includes all Material modules that are required to serve the app.
@@ -29,8 +34,14 @@ import { ServerSideSearchExampleComponent } from './examples/05-server-side-sear
     MatFormFieldModule,
     MatIconModule,
     MatSelectModule,
-    MatToolbarModule
-  ]
+    MatToolbarModule,
+    RecepcionDatosComponent,
+    EjemploGraficoComponent
+  ],
+  imports: [
+    HighchartsChartModule
+  ],
+  declarations: [RecepcionDatosComponent, EjemploGraficoComponent]
 })
 export class MaterialModule {}
 
@@ -40,6 +51,7 @@ export class MaterialModule {}
     CommonModule,
     MaterialModule,
     FormsModule,
+    HighchartsChartModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     NgxMatSelectSearchModule

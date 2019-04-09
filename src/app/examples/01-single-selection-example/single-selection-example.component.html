@@ -1,17 +1,17 @@
 <h3>Single selection</h3>
 <p>
   <mat-form-field>
-    <mat-select [formControl]="bankCtrl" placeholder="Bank" #singleSelect>
+    <mat-select (selectionChange)="cambioEnSeleccion($event)" [formControl]="eventoCtrl" placeholder="Eventos" #singleSelect>
       <mat-option>
-        <ngx-mat-select-search [formControl]="bankFilterCtrl"></ngx-mat-select-search>
+        <ngx-mat-select-search [placeholderLabel]="Eventos" [formControl]="eventoFilterCtrl"></ngx-mat-select-search>
       </mat-option>
 
-      <mat-option *ngFor="let bank of filteredBanks | async" [value]="bank">
+      <mat-option *ngFor="let bank of filteredEventos | async" [value]="bank">
         {{bank.name}}
       </mat-option>
     </mat-select>
   </mat-form-field>
 </p>
 <p>
-  Selected Bank: {{bankCtrl.value?.name}}
+ Evento Seleccionado: {{eventoCtrl.value?.name}}
 </p>
